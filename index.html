@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular Task</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="js/lib/angular/angular.min.js"></script>
+	<script src="js/lib/angular/ngStorage.min.js"></script>
+    <script src="js/lib/angular/angular-route.min.js"></script>
+  	<script src="js/lib/angular/angular-animate.min.js"></script>
+  	<script src="js/script.js"></script>
+</head>
+
+<body data-ng-app="myapp">
+	<header class="app-header">
+		<h1 class="app-title" ng-model="appTitle">GSWX</h1>
+	</header>
+<section id="wrap">
+	<!-- JAVASCRIPT Area start -->
+	<div id="javascript">
+		<h1 align="center"><b>Title:</b>
+		Javascript</h1>
+		<p><b>Description:</b>JavaScript is a programming language commonly used in web development. It was originally developed by Netscape as a means to add dynamic and interactive elements to websites. While JavaScript is influenced by Java, the syntax is more similar to C and is based on ECMAScript, a scripting language developed by Sun Microsystems.</p><br>
+
+		<div id="wrapinner" ng-hide="!JS">
+			<div class="container" data-ng-controller="ControllerJS">
+				<p><b>Sources:</b></p>
+				<section class="app-body">
+					<ul class="unstyled">
+						<li data-ng-repeat="todo in todojs track by $index">
+							<span class="done-{{ todo.done }}"><a href="{{ todo.text }}" ng-bind="todo.text"></a></span>
+						</li>
+					</ul>
+					<form data-ng-submit="addJS()" class="todo-form">
+						<input type="text" data-ng-model="todoText" placeholder="Add new" required />
+						<br />
+						<input type="submit" value="Add New" />
+					</form>
+				</section>
+			</div>
+		</div>
+		<button ng-click="JS = !JS" style="font-size:14px;">Hide/Show</button>
+	</div>
+	<!-- JAVASCRIPT AREA END -->
+
+	<!-- JQUERY AREA START -->
+	<div id="jquery">
+		<h1 align="center"><b>Title:</b>
+		JQuery</h1>
+		<p><b>Description:</b>jQuery is a concise and fast JavaScript library that can be used to simplify event handling, HTML document traversing, Ajax interactions and animation for speedy website development. jQuery simplifies the HTML's client-side scripting, thus simplifying Web 2.0 applications development.</p><br>
+
+		<div id="wrapinner" ng-hide="!JQ">
+			<div class="container" data-ng-controller="ControllerJQ">
+				<p><b>Sources:</b></p>
+				<section class="app-body">
+					<ul class="unstyled">
+						<li data-ng-repeat="todo in todojq track by $index">
+							<span class="done-{{ todo.done }}"><a href="{{ todo.text }}" ng-bind="todo.text"></a></span>
+						</li>
+					</ul>
+					<form data-ng-submit="addJQ()" class="todo-form">
+						<input type="text" data-ng-model="todoText" placeholder="Add new" required />
+						<br />
+						<input type="submit" value="Add New" />
+					</form>
+				</section>
+			</div>
+		</div>
+		<button ng-click="JQ = !JQ" style="font-size:14px;">Hide/Show</button>
+	</div>
+	<!--  JQUERY AREA END -->
+
+	<!-- ANGULAR Area start -->
+	<div id="angular">
+		<h1 align="center"><b>Title:</b>
+		AngularJS</h1>
+		<p><b>Description:</b> AngularJS (commonly referred to as "Angular" or "Angular.js") is a complete JavaScript-based open-source client and server-side web application framework mainly maintained by Google and by a community of individuals and corporations to address many of the challenges encountered in developing single-page applications.</p><br>
+
+		<div id="wrapinner" ng-hide="!Ang">
+			<div class="container" data-ng-controller="ControllerAng">
+				<p><b>Sources:</b></p>
+				<section class="app-body">
+					<ul class="unstyled">
+						<li data-ng-repeat="todo in todoAng track by $index">
+							<span class="done-{{ todo.done }}"><a href="{{ todo.text }}" ng-bind="todo.text"></a></span>
+						</li>
+					</ul>
+					<form data-ng-submit="addAng()" class="todo-form">
+						<input type="text" data-ng-model="todoText" placeholder="Add new" required />
+						<br />
+						<input type="submit" value="Add New" />
+					</form>
+				</section>
+			</div>
+		</div>
+		<button ng-click="Ang = !Ang" style="font-size:14px;">Hide/Show</button>
+	</div>
+	<!-- ANGULAR AREA END -->
+
+	<!-- NODEJS Area start -->
+	<div id="node">
+		<h1 align="center"><b>Title:</b>
+		NodeJS</h1>
+		<p><b>Description:</b>Node.js is an open-source, cross-platform runtime environment for developing server-side Web applications. Although Node.js is not a JavaScript framework, many of its basic modules are written in JavaScript, and developers can write new modules in JavaScript. The runtime environment interprets JavaScript using Google's V8 JavaScript engine.</p><br>
+
+		<div id="wrapinner" ng-hide="!Node">
+			<div class="container" data-ng-controller="ControllerNode">
+				<p><b>Sources:</b></p>
+				<section class="app-body">
+					<ul class="unstyled">
+						<li data-ng-repeat="todo in todoNode track by $index">
+							<span class="done-{{ todo.done }}"><a href="{{ todo.text }}" ng-bind="todo.text"></a></span>
+						</li>
+					</ul>
+					<form data-ng-submit="addNode()" class="todo-form">
+						<input type="text" data-ng-model="todoText" placeholder="Add new" required />
+						<br />
+						<input type="submit" value="Add New" />
+					</form>
+				</section>
+			</div>
+		</div>
+		<button ng-click="Node = !Node" style="font-size:14px;">Hide/Show</button>
+	</div>
+	<!-- NODEJS AREA END -->
+</section>
+</body>
+
+</html>
